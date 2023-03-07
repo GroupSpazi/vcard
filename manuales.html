@@ -34,30 +34,25 @@
 
 <!-- buscador -->
 
-  <script>
-    function searchManuals() {
-      // Obtener el valor del campo de búsqueda
-      var query = document.getElementById("search").value.toLowerCase();
-  
-      // Obtener todas las tarjetas de servicio
-      var cards = document.getElementsByClassName("service-card-info");
-  
-      // Recorrer todas las tarjetas de servicio
-      for (var i = 0; i < cards.length; i++) {
-        var card = cards[i];
-  
-        // Obtener el texto de la tarjeta de servicio
-        var text = card.textContent.toLowerCase();
-  
-        // Si la consulta coincide con el texto de la tarjeta de servicio, mostrar la tarjeta de servicio
-        if (text.indexOf(query) !== -1) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+<script>
+  function searchManuals() {
+    var input, filter, cards, cardContainer, h3, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    cardContainer = document.getElementById("card-container");
+    cards = cardContainer.getElementsByClassName("service-card-info");
+    for (i = 0; i < cards.length; i++) {
+      h3 = cards[i].getElementsByTagName("h3")[0];
+      txtValue = h3.textContent || h3.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        cards[i].style.display = "";
+      } else {
+        cards[i].style.display = "none";
       }
     }
+  }
   </script>
+  
   
 
 <!-- buscador -->
@@ -202,6 +197,7 @@
         <form>
           <input type="text" id="search" placeholder="Buscar manuales...">
           <button type="button" onclick="searchManuals()">Buscar</button>
+
         </form>
       </div>
       
@@ -229,7 +225,7 @@
                   <img class="rounded img-thumbnail" alt="axial 600" src="frontend/themes/default/assets/img/manuales/600.jpg"/>
                 </a>
                           </div>
-            <div class="service-card-info">
+            <div class="service-card-info ">
               <h3 class="text-center">AX-600</h3>
             </div>
           </div>
