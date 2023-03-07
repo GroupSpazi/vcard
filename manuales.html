@@ -25,52 +25,6 @@
   <link href="public/dist/js/common.min5564.js?v=20230218212729264617" rel="preload" as="script">
 
 
-
-
-
-
-
-
-
-<!-- buscador -->
-
-<script>
- function searchManuals() {
-  var input, filter, cards, cardContainer, h3, i, txtValue;
-  input = document.getElementById("search");
-  filter = input.value.toLowerCase();
-  cardContainer = document.getElementById("card-container");
-  cards = cardContainer.getElementsByClassName("service-card-info");
-  for (i = 0; i < cards.length; i++) {
-    h3 = cards[i].querySelector("h3");
-    txtValue = h3.textContent || h3.innerText;
-    if (txtValue.toLowerCase().indexOf(filter) > -1) {
-      cards[i].style.display = "";
-    } else {
-      cards[i].style.display = "none";
-    }
-  }
-}
-
-  </script>
-  
-  
-
-<!-- buscador -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Scripts -->
   <script src="public/dist/js/main.min5564.js?v=20230218212729264617"></script>
   <script src="public/dist/vendor/sweetalert/sweetalert.min5564.js?v=20230218212729264617"></script>
@@ -194,14 +148,7 @@
       </div>
 
       
-      <div>
-        <form>
-          <input type="text" id="search" placeholder="Buscar manuales...">
-          <button class="btn-primary" onclick="searchManuals()">Buscar</button>
-
-
-        </form>
-      </div>
+             
       
 
 <div class="vcard-block block-service mt-3">
@@ -218,40 +165,20 @@
 </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
   <div class="vcard-block-content">
     <div class="row">
-       <div class="col-6 mb-3">
+              <div class="col-6 mb-3">
           <div class="service-card">
-            <div class="service-card-info ">
-              <h3 class="text-center">AX-600</h3>
-            </div>
-            
             <div class="service-card-img">
-                  <a href="https://drive.google.com/file/d/1FRhEiPHj3G1THQ6hd5xKnt5h1pfLjNzY/view?usp=share_link" title="axial 600" target="_blank">
+                              <a href="https://drive.google.com/file/d/1FRhEiPHj3G1THQ6hd5xKnt5h1pfLjNzY/view?usp=share_link" title="axial 600" target="_blank">
                   <img class="rounded img-thumbnail" alt="axial 600" src="frontend/themes/default/assets/img/manuales/600.jpg"/>
                 </a>
-           </div>
-           
+                          </div>
+            <div class="service-card-info">
+              <h3 class="text-center">AX-600</h3>
+            </div>
           </div>
         </div>
-
-
-
-
         <div class="col-6 mb-3">
           <div class="service-card">
             <div class="service-card-img">
