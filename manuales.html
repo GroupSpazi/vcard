@@ -35,22 +35,23 @@
 <!-- buscador -->
 
 <script>
-  function searchManuals() {
-    var input, filter, cards, cardContainer, h3, i, txtValue;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("card-container");
-    cards = cardContainer.getElementsByClassName("service-card-info");
-    for (i = 0; i < cards.length; i++) {
-      h3 = cards[i].getElementsByTagName("h3")[0];
-      txtValue = h3.textContent || h3.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        cards[i].style.display = "";
-      } else {
-        cards[i].style.display = "none";
-      }
+ function searchManuals() {
+  var input, filter, cards, cardContainer, h3, i, txtValue;
+  input = document.getElementById("search");
+  filter = input.value.toLowerCase();
+  cardContainer = document.getElementById("card-container");
+  cards = cardContainer.getElementsByClassName("service-card-info");
+  for (i = 0; i < cards.length; i++) {
+    h3 = cards[i].querySelector("h3");
+    txtValue = h3.textContent || h3.innerText;
+    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
     }
   }
+}
+
   </script>
   
   
